@@ -59,32 +59,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     </div>
   `
 
-  // Send via Resend (configure RESEND_API_KEY in Vercel env)
-  const resendKey = process.env.RESEND_API_KEY
-  if (!resendKey) {
-    console.error('RESEND_API_KEY not configured')
+  // Send via Mailgun (configure MAILGUN_API_KEY and MAILGUN_DOMAIN in Vercel env)
+  const mgKey = process.env.MAILGUN_API_KEY
+  const mgDomain = process.env.MAILGUN_DOMAIN
+  if (!mgKey || !mgDomain) {
+    console.error('Mailgun env vars not configured')
     return res.status(500).json({ error: 'Email service not configured.' })
   }
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
+    const formData = new URLSearchParams()
+    formData.append('from', `Innovah Website <noreply@${mgDomain}>`)
+    formData.append('to', RECIPIENT)
+    formData.append('h:Reply-To', email)
+    formData.append('subject', subject)
+    formData.append('html', htmlBody)
+
+    const response = await fetch(`https://api.eu.mailgun.net/v3/${mgDomain}/messages`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${resendKey}`,
+        Authorization: `Basic ${Buffer.from(`api:${mgKey}`).toString('base64')}`,
       },
-      body: JSON.stringify({
-        from: 'Innovah Website <noreply@innovahautomotive.com>',
-        to: RECIPIENT,
-        reply_to: email,
-        subject,
-        html: htmlBody,
-      }),
+      body: formData,
     })
 
     if (!response.ok) {
       const err = await response.text()
-      console.error('Resend error:', err)
+      console.error('Mailgun error:', err)
       return res.status(500).json({ error: 'Email versturen mislukt.' })
     }
 
