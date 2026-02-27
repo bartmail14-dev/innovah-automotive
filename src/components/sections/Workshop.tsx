@@ -37,36 +37,72 @@ const workshopServices = [
 
 export default function Workshop() {
   return (
-    <section id="werkplaats" className="py-24 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          label="Werkplaats"
-          title="Professionele Werkplaats"
-          description="Onze werkplaats is uitgerust met de nieuwste apparatuur voor alle typen personenvoertuigen. Van routine onderhoud tot complexe reparaties."
-          center
+    <section id="werkplaats" className="relative py-24 bg-black overflow-hidden">
+      {/* Background accent image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/detail-droplets.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.07]"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+      </div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {workshopServices.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group bg-white/[0.03] border border-white/5 rounded-xl p-6 hover:bg-white/[0.06] hover:border-gold/20 transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
-                  <service.icon className="w-6 h-6 text-gold" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-white mb-1">{service.title}</h3>
-                  <p className="text-sm text-muted leading-relaxed">{service.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-2xl overflow-hidden"
+          >
+            <img
+              src="/images/workshop-lift.jpg"
+              alt="Professionele werkplaats met auto op brug"
+              className="w-full aspect-[4/3] object-cover rounded-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl" />
+            {/* Badge overlay */}
+            <div className="absolute bottom-6 left-6 bg-black/70 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3">
+              <div className="text-gold font-extrabold text-lg">Volledig uitgerust</div>
+              <div className="text-white/60 text-xs">Moderne apparatuur voor alle merken</div>
+            </div>
+          </motion.div>
+
+          {/* Right: Content */}
+          <div>
+            <SectionHeading
+              label="Werkplaats"
+              title="Professionele Werkplaats"
+            />
+            <p className="mt-4 text-muted leading-relaxed">
+              Onze werkplaats is uitgerust met de nieuwste apparatuur voor alle typen
+              personenvoertuigen. Van routine onderhoud tot complexe reparaties.
+            </p>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {workshopServices.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="group flex items-start gap-3 bg-white/[0.03] border border-white/5 rounded-xl p-4 hover:bg-white/[0.06] hover:border-gold/20 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
+                    <service.icon className="w-5 h-5 text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white text-sm mb-0.5">{service.title}</h3>
+                    <p className="text-xs text-muted leading-relaxed">{service.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* CTA Bar */}

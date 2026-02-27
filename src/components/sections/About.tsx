@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Car, Award, Handshake } from 'lucide-react'
+import { Award, Handshake, Car } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function About() {
@@ -7,7 +7,7 @@ export default function About() {
     <section id="over-ons" className="py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Visual placeholder */}
+          {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -15,19 +15,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="bg-dark rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden">
-              {/* Placeholder visual — geometric automotive design */}
-              <div className="relative w-full h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Car className="w-20 h-20 text-gold/30 mx-auto mb-4" />
-                    <span className="text-4xl font-extrabold text-white/10 tracking-tight">INNOVAH</span>
-                  </div>
-                </div>
-                {/* Decorative lines */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
-              </div>
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src="/images/car-garage.jpg"
+                alt="Premium auto in sfeervolle garage"
+                className="w-full aspect-[4/3] object-cover"
+              />
             </div>
             {/* Badge overlay */}
             <div className="absolute -bottom-6 -right-6 bg-gold text-black rounded-xl px-6 py-4 shadow-xl">

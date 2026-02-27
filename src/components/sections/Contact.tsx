@@ -253,14 +253,22 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Personal touch */}
-            <div className="bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-white mb-2">Silvijn Simonis</h3>
-              <p className="text-sm text-muted">Eigenaar & Contactpersoon</p>
-              <p className="text-sm text-white/70 mt-4 leading-relaxed">
-                "Heeft u vragen of wilt u vrijblijvend advies? Neem gerust contact op.
-                Ik help u persoonlijk verder."
-              </p>
+            {/* Personal touch with portrait */}
+            <div className="relative bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 rounded-2xl overflow-hidden">
+              <div className="flex items-center gap-5 p-6">
+                <img
+                  src="/images/silvijn-portrait.jpg"
+                  alt="Silvijn Simonis — Eigenaar Innovah Automotive"
+                  className="w-20 h-20 rounded-xl object-cover object-top shrink-0"
+                />
+                <div>
+                  <h3 className="text-lg font-bold text-white">Silvijn Simonis</h3>
+                  <p className="text-sm text-muted">Eigenaar & Contactpersoon</p>
+                  <p className="text-sm text-white/60 mt-2 leading-relaxed">
+                    "Heeft u vragen of wilt u vrijblijvend advies? Neem gerust contact op."
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

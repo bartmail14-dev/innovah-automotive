@@ -12,19 +12,20 @@ const stats = [
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-dark to-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,195,32,0.08)_0%,_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,195,32,0.05)_0%,_transparent_50%)]" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero-warehouse.jpg"
+          alt="Premium auto in industriële omgeving"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Dark overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+      </div>
 
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
+      {/* Subtle gold accent glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,195,32,0.06)_0%,_transparent_60%)]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
         <div className="max-w-3xl">
@@ -33,10 +34,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8"
+            className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-8"
           >
             <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <span className="text-sm text-muted">Import &middot; Export &middot; Reparatie</span>
+            <span className="text-sm text-white/70">Import &middot; Export &middot; Reparatie</span>
           </motion.div>
 
           {/* Heading */}
@@ -56,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-muted max-w-xl leading-relaxed"
+            className="mt-6 text-lg sm:text-xl text-white/70 max-w-xl leading-relaxed"
           >
             Innovah Automotive is gespecialiseerd in de import en export van personenvoertuigen.
             Scherpe prijzen, volledige RDW-registratie en professionele service.
@@ -83,7 +84,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 flex flex-wrap gap-6 text-sm text-muted"
+            className="mt-12 flex flex-wrap gap-6 text-sm text-white/60"
           >
             <span className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-gold" />
@@ -105,12 +106,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-white/10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-0"
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-white/10 bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-0"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center sm:py-8">
               <div className="text-3xl sm:text-4xl font-extrabold text-gold">{stat.value}</div>
-              <div className="text-sm text-muted mt-1">{stat.label}</div>
+              <div className="text-sm text-white/50 mt-1">{stat.label}</div>
             </div>
           ))}
         </motion.div>
