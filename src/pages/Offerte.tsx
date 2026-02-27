@@ -378,7 +378,7 @@ export default function OffertePage() {
               Offerte Innovah Automotive
             </h2>
             <p className="text-white/60 text-sm mt-1">
-              Professionele bedrijfswebsite &mdash; design concept &amp; abonnementsvoorstel
+              Professionele bedrijfswebsite: design concept &amp; abonnementsvoorstel
             </p>
           </div>
 
@@ -390,22 +390,22 @@ export default function OffertePage() {
           <div className="space-y-4 text-white/70 leading-relaxed">
             <p>Beste Silvijn,</p>
             <p>
-              Allereerst bedankt voor je interesse. Wat je hebt bekeken op{' '}
+              Bedankt voor je interesse. Wat je hebt bekeken op{' '}
               <strong className="text-white">innovah-automotive.vercel.app</strong> is een{' '}
               <strong className="text-white">design concept</strong> dat wij via{' '}
-              <em>rapid prototyping</em> hebben gebouwd. Dit is onze manier van werken: in plaats
-              van eindeloos te vergaderen over wireframes en mockups, bouwen wij direct een werkend
-              prototype dat je kunt zien, voelen en doorklikken.
+              <em>rapid prototyping</em> hebben gebouwd. Dat is hoe wij werken: geen eindeloze
+              vergaderingen over wireframes en mockups, maar direct een werkend prototype bouwen
+              dat je kunt zien, voelen en doorklikken.
             </p>
             <p>
-              Het voordeel? Je hebt direct een realistisch beeld van het eindresultaat. Wat je nu
-              ziet kan worden aangepast, uitgebreid en verfijnd &mdash; maar de basis staat er.
-              We hopen dat het je aanspreekt.
+              Het voordeel? Je hebt meteen een realistisch beeld van het eindresultaat. Wat je
+              nu ziet kan worden aangepast, uitgebreid en verfijnd. De basis staat er en we
+              hopen dat het je aanspreekt.
             </p>
             <p>
               Mijn naam is <strong className="text-white">Bart Visser</strong>, oprichter van
-              Blue Wire Media. Ik bouw moderne websites en webapplicaties op maat. Hieronder vind
-              je mijn voorstel voor de samenwerking.
+              Blue Wire Media. Ik bouw moderne websites en webapplicaties op maat. Hieronder
+              vind je mijn voorstel voor de samenwerking.
             </p>
           </div>
         </div>
@@ -416,7 +416,7 @@ export default function OffertePage() {
         <div className="space-y-6">
           <div>
             <SectionLabel>Werkwijze</SectionLabel>
-            <SectionTitle>Rapid Prototyping &mdash; direct resultaat</SectionTitle>
+            <SectionTitle>Rapid Prototyping: direct resultaat</SectionTitle>
             <p className="text-white/60 mt-2">
               Geen weken wachten op een ontwerp. Wij bouwen direct een werkend prototype.
             </p>
@@ -486,7 +486,7 @@ export default function OffertePage() {
               <ul className="space-y-2">
                 <li>Professioneel, donker design met gouden accenten passend bij automotive</li>
                 <li>Mobile-first responsive design (telefoon, tablet, desktop)</li>
-                <li>Volledig op maat gebouwd &mdash; geen standaard template</li>
+                <li>Volledig op maat gebouwd, geen standaard template</li>
                 <li>Subtiele scroll-animaties en hover-effecten (Framer Motion)</li>
                 <li>Consistente huisstijl passend bij het merk Innovah Automotive</li>
               </ul>
@@ -582,14 +582,17 @@ export default function OffertePage() {
 
           <div className="space-y-4 text-white/70 leading-relaxed text-sm">
             <p>
-              We worden regelmatig gevraagd: <em>&quot;Kan ik niet gewoon eenmalig betalen?&quot;</em>{' '}
-              Natuurlijk begrijpen we die gedachte. Maar onze ervaring &mdash; en die van onze
-              klanten &mdash; leert ons dat een abonnementsvorm voor beide partijen prettiger werkt.
+              Eerlijk gezegd zijn we het abonnementsmodel niet zelf bedacht. Het kwam vanuit
+              onze klanten. Meerdere ondernemers gaven aan dat ze geen grote investering vooraf
+              wilden doen voor een website, maar wel wilden dat alles goed geregeld bleef:
+              hosting, updates, beveiliging en af en toe een kleine aanpassing.
             </p>
             <p>
-              <strong className="text-white">Onze klanten vroegen erom.</strong> Ze wilden geen
-              grote investering vooraf, maar wel zekerheid dat hun website up-to-date blijft,
-              snel is en goed werkt. Een abonnement maakt dat mogelijk.
+              Dat snapten we. En het werkt voor ons ook prettig. In plaats van een eenmalig
+              project op te leveren en dan uit beeld te verdwijnen, blijven we betrokken.
+              <strong className="text-white"> Wij groeien graag met onze klanten mee.</strong>{' '}
+              Begint klein, en als het loopt voegen we er functionaliteit bij. Zo betaal je
+              alleen voor wat je ook echt gebruikt.
             </p>
           </div>
 
@@ -605,7 +608,7 @@ export default function OffertePage() {
               },
               {
                 title: 'Doorlopende support',
-                desc: 'Kleine aanpassingen, tekst wijzigen, een foto vervangen — het is inbegrepen. Geen extra facturen.',
+                desc: 'Kleine aanpassingen, tekst wijzigen, een foto vervangen: het zit erin. Geen extra facturen voor elk wissewasje.',
               },
               {
                 title: 'Flexibel uitbreidbaar',
@@ -733,7 +736,7 @@ export default function OffertePage() {
               title="Supabase Backend"
               price={25}
               icon={<DatabaseIcon className="w-5 h-5" />}
-              description="Een volledige database en backend voor geavanceerde functionaliteit."
+              description="Een volledige database en backend voor geavanceerde functionaliteit. We hebben dit o.a. ingezet bij Auto Theorie Specialist: gebruikersaccounts, een quiz-systeem met voortgangstracking, abonnementsbeheer en beveiligde content. Dat soort mogelijkheden zijn ook voor Innovah beschikbaar."
               features={[
                 'PostgreSQL database voor al je data',
                 'Gebruikersaccounts & inlogsysteem (klantportaal)',
@@ -745,6 +748,49 @@ export default function OffertePage() {
               active={addOns.supabase}
               onToggle={() => toggleAddOn('supabase')}
             />
+
+            {/* Supabase case study */}
+            {addOns.supabase && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#1A1A1A] rounded-lg p-5 border border-[#FFC320]/10"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FFC320] mb-2">
+                  Voorbeeld uit de praktijk
+                </p>
+                <h4 className="font-bold text-white text-sm mb-3">
+                  Auto Theorie Specialist (Drive Success Platform)
+                </h4>
+                <p className="text-white/60 text-sm leading-relaxed mb-4">
+                  Voor Auto Theorie Specialist hebben wij een compleet leerplatform gebouwd met Supabase
+                  als backend. Gebruikers maken een account aan, oefenen theorie-examens en zien hun
+                  voortgang per onderwerp. De quiz-antwoorden worden server-side gevalideerd zodat
+                  gebruikers niet kunnen spieken in de broncode. Daarnaast is er abonnementsbeheer
+                  ingebouwd: gratis proefversie, betaalde toegang en automatische verlengingen.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: 'Gebruikersaccounts', desc: 'Registratie, inloggen, wachtwoord herstellen' },
+                    { label: 'Quiz-systeem', desc: 'Beveiligde vragen, score-berekening server-side' },
+                    { label: 'Voortgangstracking', desc: 'Per onderwerp bijhouden hoe ver je bent' },
+                    { label: 'Abonnementsbeheer', desc: 'Gratis proef, betaald, automatische verlenging' },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-white/[0.03] rounded-lg px-4 py-3">
+                      <p className="text-white text-xs font-semibold">{item.label}</p>
+                      <p className="text-white/40 text-xs mt-0.5">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-white/40 text-xs mt-4 leading-relaxed">
+                  Voor Innovah Automotive zou Supabase bijvoorbeeld een klantportaal mogelijk maken
+                  waar klanten de status van hun auto of reparatie kunnen volgen, of een dashboard
+                  waarmee je zelf auto&apos;s en werkplaatsafspraken beheert.
+                </p>
+              </motion.div>
+            )}
 
             <AddOnCard
               title="PostHog Analytics"
@@ -890,7 +936,7 @@ export default function OffertePage() {
                   </p>
                   <p>
                     Bij be&euml;indiging ontvang je de volledige broncode. Er is geen vendor
-                    lock-in &mdash; de website is en blijft van jou.
+                    lock-in: de website is en blijft van jou.
                   </p>
                 </div>
               </div>
@@ -957,6 +1003,17 @@ export default function OffertePage() {
             </p>
           </div>
 
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 bg-[#FFC320] text-black font-bold text-sm px-6 py-3 rounded-lg hover:bg-[#FFD04A] transition-colors"
+          >
+            Bekijk de website
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+
           <div className="h-px bg-white/10" />
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -965,13 +1022,13 @@ export default function OffertePage() {
               <p className="text-white/50 text-sm">Blue Wire Media</p>
             </div>
             <div className="space-y-2 text-sm">
-              <a href="mailto:b.visser@bluewiremedia.nl" className="flex items-center gap-2 text-white/50 hover:text-[#FFC320] transition-colors">
+              <a href="mailto:contact@bluewiremedia.nl" className="flex items-center gap-2 text-white/50 hover:text-[#FFC320] transition-colors">
                 <MailIcon className="w-4 h-4" />
-                b.visser@bluewiremedia.nl
+                contact@bluewiremedia.nl
               </a>
-              <a href="tel:+31652814000" className="flex items-center gap-2 text-white/50 hover:text-[#FFC320] transition-colors">
+              <a href="tel:+31644030194" className="flex items-center gap-2 text-white/50 hover:text-[#FFC320] transition-colors">
                 <PhoneIcon className="w-4 h-4" />
-                06-52814XXX
+                06-44030194
               </a>
             </div>
           </div>
@@ -981,7 +1038,7 @@ export default function OffertePage() {
       {/* ===== FOOTER BAR ===== */}
       <div className="bg-[#0A0A0A] border-t border-white/5 px-6 py-6 text-center">
         <p className="text-[10px] text-white/20">
-          &copy; {new Date().getFullYear()} Blue Wire Media &mdash; KvK 94435383 &mdash; BTW NL005137858B42
+          &copy; {new Date().getFullYear()} Blue Wire Media · KvK 94435383 · BTW NL005137858B42
         </p>
       </div>
     </div>
